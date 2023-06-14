@@ -172,6 +172,104 @@ h6 {
   padding: 0 0.9375rem;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background: #141414;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.loader__container {
+  height: 100vh;
+  z-index: 12;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.125rem;
+}
+
+.loader__title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000;
+  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.5rem #493812);
+          filter: drop-shadow(0.1rem 0.1rem 0.5rem #493812);
+}
+
+.loader__item {
+  z-index: 11;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background: #e8aa31;
+}
+
+.loader__item:not(:last-child) {
+  border-bottom: 0.625rem solid #141414;
+}
+
+.knife_svg {
+  -webkit-animation: anime-knife 3s ease infinite;
+          animation: anime-knife 3s ease infinite;
+  -webkit-filter: drop-shadow(0 0 0.8rem #8f6e27);
+          filter: drop-shadow(0 0 0.8rem #8f6e27);
+}
+
+@-webkit-keyframes anime-knife {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+            transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes anime-knife {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+            transform: rotateZ(-360deg);
+  }
+}
+
 .checkbox {
   position: relative;
 }
@@ -3640,9 +3738,8 @@ a:hover {
   font-size: 20px;
   line-height: 46px;
   color: #e8aa31;
+  background: #fff;
   border: 2px solid #e8aa31;
-  -webkit-filter: drop-shadow(0px 4px 20px rgba(232, 170, 49, 0.43));
-          filter: drop-shadow(0px 4px 20px rgba(232, 170, 49, 0.43));
   border-radius: 3px;
 }
 
@@ -4168,6 +4265,8 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #e8aa31;
+  gap: 0.625rem;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -4177,11 +4276,6 @@ a:hover {
   -webkit-transform: scale(1.03);
       -ms-transform: scale(1.03);
           transform: scale(1.03);
-}
-
-.btn {
-  background: #e8aa31;
-  gap: 0.625rem;
 }
 
 .btn_black {
